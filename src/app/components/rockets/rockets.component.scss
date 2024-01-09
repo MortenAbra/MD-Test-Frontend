@@ -1,23 +1,18 @@
 .elevated-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    margin: 16px;
-    // Adjust styling as needed
-  }
-  
-  .rocket-list {
-    list-style: none;
-    padding: 0;
-  
-    li {
-      margin-bottom: 8px;
-    }
-  }
-  
-  .update-button {
-    margin-left: 8px;
-    // Add button styling as needed
-  }
-  
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin: 16px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}

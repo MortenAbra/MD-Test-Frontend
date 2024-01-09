@@ -43,6 +43,10 @@ export class RocketsComponent implements OnInit {
   }
 
   goToUpdateRocket(rocketId: string): void {
-    if (rocketId) {this.router.navigate(['rocket', rocketId]);}
+    if (rocketId) {this.router.navigate(['rockets', rocketId]);}
+  }
+
+  createRocket(): void {
+    this.router.navigate(['create-rocket'])
   }
 }

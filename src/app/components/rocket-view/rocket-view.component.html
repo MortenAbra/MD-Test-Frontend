@@ -1,32 +1,40 @@
-<mat-card>
+<mat-card *ngIf="rocket" class="rocket-detail-card">
     <mat-card-content>
-      <form>
-        <!-- Form 1: Modify the name of the rocket -->
-        <mat-form-field appearance="fill">
-          <mat-label>Rocket Name</mat-label>
-          <input matInput placeholder="Enter rocket name">
-        </mat-form-field>
+      <div class="form-fields-container">
+      <!-- Form 1: Modify the name of the rocket -->
+      <mat-form-field appearance="fill">
+        <mat-label>Rocket Name</mat-label>
+        <input matInput placeholder="Enter rocket name" 
+               [ngModel]="rocket?.name" 
+               (ngModelChange)="rocket && (rocket.name = $event)">
+      </mat-form-field>
   
-        <!-- Form 2: Modify the mission -->
-        <mat-form-field appearance="fill">
-          <mat-label>Mission</mat-label>
-          <input matInput placeholder="Enter mission details">
-        </mat-form-field>
+      <!-- Form 2: Modify the mission -->
+      <mat-form-field appearance="fill">
+        <mat-label>Mission</mat-label>
+        <input matInput placeholder="Enter mission details" 
+        [ngModel]="rocket?.mission"
+        (ngModelChange)="rocket && (rocket.mission = $event)">
+      </mat-form-field>
   
-        <!-- Form 3: Change the speed -->
-        <mat-form-field appearance="fill">
-          <mat-label>Speed (km/s)</mat-label>
-          <input matInput type="number" placeholder="Enter speed">
-        </mat-form-field>
-      </form>
+      <!-- Form 3: Change the speed -->
+      <mat-form-field appearance="fill">
+        <mat-label>Speed (km/s)</mat-label>
+        <input matInput type="number" placeholder="Enter speed" 
+        [ngModel]="rocket?.speed"
+        (ngModelChange)="rocket && (rocket.speed = $event)">
+      </mat-form-field>
+    </div>
   
-      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+      <div class="button-container">
+        <!-- Back Button -->
+        <button mat-raised-button (click)="goBack()">Back</button>
+  
         <!-- Delete Rocket Button -->
-        <button mat-raised-button color="warn">Delete Rocket</button>
+        <button mat-raised-button color="warn" (click)="deleteRocket(rocket.id)">Delete Rocket</button>
         
         <!-- Update Button -->
-        <button mat-raised-button color="primary">Update Rocket</button>
+        <button mat-raised-button color="primary" (click)="updateRocket()">Update Rocket</button>
       </div>
     </mat-card-content>
   </mat-card>
-  
