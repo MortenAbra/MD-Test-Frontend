@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-content>
+      <form>
+        <!-- Form 1: Modify the name of the rocket -->
+        <mat-form-field appearance="fill">
+          <mat-label>Rocket Name</mat-label>
+          <input matInput placeholder="Enter rocket name">
+        </mat-form-field>
+  
+        <!-- Form 2: Modify the mission -->
+        <mat-form-field appearance="fill">
+          <mat-label>Mission</mat-label>
+          <input matInput placeholder="Enter mission details">
+        </mat-form-field>
+  
+        <!-- Form 3: Change the speed -->
+        <mat-form-field appearance="fill">
+          <mat-label>Speed (km/s)</mat-label>
+          <input matInput type="number" placeholder="Enter speed">
+        </mat-form-field>
+      </form>
+  
+      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <!-- Delete Rocket Button -->
+        <button mat-raised-button color="warn">Delete Rocket</button>
+        
+        <!-- Update Button -->
+        <button mat-raised-button color="primary">Update Rocket</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

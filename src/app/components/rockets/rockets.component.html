@@ -1,0 +1,11 @@
+<div class="elevated-card">
+  <mat-form-field appearance="fill">
+    <mat-label>Select a Rocket</mat-label>
+    <mat-select [(value)]="selectedRocket">
+      <mat-option *ngFor="let rocket of rockets" [value]="rocket.id">
+        {{ rocket.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="goToUpdateRocket(selectedRocket)">GOTO</button>
+</div>
